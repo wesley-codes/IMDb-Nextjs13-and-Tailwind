@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import "./globals.css";
+import Providers from "./Providers";
 
 export const metadata = {
   title: "IMDB",
@@ -15,10 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <Header />
-
-      <body>{children}</body>
-    </div>
+    <html lang="en">
+        <body>
+      <Providers>
+          <Header />
+          {children}
+      </Providers>
+        </body>
+    </html>
   );
 }
