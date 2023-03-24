@@ -2,13 +2,15 @@ import styles from "./page.module.css";
 import MovieResult from "@/components/MovieResult/MovieResult";
 import { MovieTypes } from "@/components/MovieResult/_types";
 
-interface SearchParamsProps {
-  genre: string;
+interface HomeProps {
+  params: {
+    genre: string
+  }
 }
 
 const API_KEY = process.env.API_KEY;
-export default async function Home(searchParams: SearchParamsProps) {
-  const genre = searchParams.genre || "fetchTrending";
+export default async function Home({params}: HomeProps) {
+  const genre = params.genre || "fetchTrending";
   const response = await fetch(
     `https://api.themoviedb.org/3/${
       genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
