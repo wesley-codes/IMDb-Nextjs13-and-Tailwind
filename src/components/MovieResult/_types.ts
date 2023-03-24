@@ -17,4 +17,4 @@ export type MovieTypes = {
     origin_country: string[]
     original_title: string
     release_date: string
-  }
+  } 
