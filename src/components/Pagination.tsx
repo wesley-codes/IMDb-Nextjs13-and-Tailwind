@@ -9,20 +9,18 @@ interface PaginationProps{
 }
 
 export default function Pagination({currentPage}:PaginationProps) {
-  const [page, setPage] = useState<number>(1);
+  let [page, setPage] = useState<number>(1);
 
   const handlePrevPage = () => {
     if (page > 1) {
-      setPage(page - 1);
+      setPage(page -=1);
     }
-    setPage(page - 1);
 
-    console.log(page);
   };
 
   const handleNextPage = () => {
     
-    setPage(page + 1);
+    setPage(page +=1 );
     console.log(page);
   };
 

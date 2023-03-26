@@ -11,8 +11,7 @@ interface HomeProps {
 }
 const API_KEY = process.env.API_KEY;
 
-const fetchMovies = async (genre: string, page: number) => {
-};
+
 
 export default async function Home({ searchParams }: HomeProps) {
   const genre = searchParams.genre || "fetchTrending";
